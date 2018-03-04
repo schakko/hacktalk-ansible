@@ -1,0 +1,4 @@
+- name: "Configuring Apache HTTP port"
+  debug:
+    msg: "Setting Apache HTTP port to {{ apache_http_port }}"
+    verbosity: 0

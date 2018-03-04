@@ -1,0 +1,6 @@
+; the format of this file is .ini but could also be yml
+[my_host_group]
+; my_host_group is the name of this host group
+
+; localhost is member of this host group. We force Ansible to use a local connection instead of connecting via SSH
+localhost ansible_connection=local
