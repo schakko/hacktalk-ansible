@@ -1,23 +1,22 @@
 # Hacktalk Wolfsburg - Ansible
-## Part 4: a complete sample
-This playbook installs Apache HTTPD and sets up a few websites.
+## Part 1: Essentials
 
-## Hello World
+### Hello World
 
     ansible-playbook 1-hello-world.yml
 
-## Variables
+### Variables
 
     ansible-playbook 2-variables.yml
 
-## Variable interpolation
+### Variable interpolation
 
     ansible-playbook 3-variable-interpolation.yml
 
-## Looping
+### Looping
 
     ansible-playbook 4-looping.yml
 
-## Logic
+### Logic
 
     ansible-playbook 5-logic.yml --step
