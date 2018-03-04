@@ -1,0 +1,2 @@
+# Please note that this file must be named like the hostgroup is named or it won't be picked up
+apache_http_port: 66066

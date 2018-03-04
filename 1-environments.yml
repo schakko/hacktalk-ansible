@@ -1,8 +1,8 @@
 # hosts can not only contain hostnames but also hostgroups
 # executing "ansible-playbook 1-environments.yml" will do nothing
 # executing "ansible-playbook -i environments/local 1-environments.yml" will execute the playbook on localhost
-# executing "ap -i environments/local-with-group_vars 1-environments.yml" overwrites the apache_http_tomcat by using the variable from the group_vars directory
+# executing "ap -i environments/local-with-group_vars 1-environments.yml" overwrites the apache_http_port by using the variable from the group_vars directory
 - hosts: my_host_group
   roles:
-    # the role "my-role" is applied to each member of the hostgroup my_host_group
-    - apache-http
+    # the role "apache-httpd" is applied to each member of the hostgroup my_host_group
+    - apache-httpd
