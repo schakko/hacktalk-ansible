@@ -4,4 +4,4 @@ This playbook installs Apache HTTPD and sets up a few websites.
 
 ## Execute
 
-    ansible-playbook -i environments/local webserver.yml --step
+    sudo ansible-playbook -i environments/local webserver.yml --step
