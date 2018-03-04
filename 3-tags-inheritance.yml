@@ -1,0 +1,9 @@
+- hosts: localhost 
+  roles:
+    # roles and tasks can be tagged
+    # running "ansible-playbook 2-tags.yml" will execute all roles as no tag has been specified
+    # running "ansible-playbook 2-tags.yml --tags tagged_role" will execute the second and third role
+    - "role-1"
+    # this is the explicit role definition. We apply the tag "tagged_role" to all tasks of the given role
+    - { role: "role-2", tags: [ 'tagged_role' ] }
+    - "role-with-tag"

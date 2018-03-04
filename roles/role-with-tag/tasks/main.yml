@@ -1,0 +1,6 @@
+- name: Hello from role with tag
+  debug:
+    msg: "Hello from role with tag :-)"
+    verbosity: 0
+  tags:
+    - tagged_role

@@ -1,0 +1,6 @@
+- hosts: localhost # ansible_connection=local
+  # having hundreds of tasks inside the playbook makes it unreadable.
+  # roles separates belonging tasks into own modules. They are fetched from the roles/ directory
+  roles:
+    - "role-1"
+    - "role-2"

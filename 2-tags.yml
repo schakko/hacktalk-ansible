@@ -1,0 +1,7 @@
+- hosts: localhost 
+  roles:
+    # roles and tasks can be tagged
+    # running "ansible-playbook 2-tags.yml" will execute both roles as no tag has been specified
+    # running "ansible-playbook 2-tags.yml --tags tagged_role" will execute only task in secon role as it has been specified in the task
+    - "role-1"
+    - "role-with-tag"

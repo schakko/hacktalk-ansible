@@ -1,0 +1,4 @@
+- name: Hello from role 2
+  debug:
+    msg: "Hello from role 2 :-)"
+    verbosity: 0
