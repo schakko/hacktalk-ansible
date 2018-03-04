@@ -1,0 +1,18 @@
+- name: Install Apache HTTPD
+  # "dnf" only works on Red Hat based systems. We don't care as we use Fedora.
+  dnf:
+    name: httpd
+    state: latest
+ 
+- name: Start Apache HTTPD
+  # after installing httpd, it must be in the systemd state "started"
+  systemd:
+    name: httpd
+    state: started
+
+- name: New index file
+  # we are copying the file ../files/index.html on the remote host
+  copy:
+    src: ../files/index.html
+    # if not overwritten, the variable is taken from ../defaults/main.yml
+    dest: "{{ apache_http_www_directory }}"

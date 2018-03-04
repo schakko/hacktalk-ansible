@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Created with Ansible</title>
+    </head>
+    <body>
+        The following sites are available:
+        <ul>
+        {% for item in websites %}
+            <li><a href="ansible-{{ item }}.html">{{ item }}</a></li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>

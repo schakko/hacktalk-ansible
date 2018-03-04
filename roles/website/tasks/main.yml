@@ -1,0 +1,19 @@
+- name: Check websites variable has been set
+  # assert assumes that a condition is met or the execution of the current playbook is canceled
+  assert:
+    that: websites is defined
+    msg: "'websites' must be defined"
+
+- name: Create website overview list
+  # the "template" parses files from the ../templates directory and puts the result into the destination file on the remote host
+  template:
+    src: "overview.html.j2"
+    dest: "{{ apache_http_www_directory }}/overview.html"
+
+- name: Create website pages
+  template:
+    src: "website.html.j2"
+    dest: "{{ apache_http_www_directory }}/ansible-{{ item }}.html"
+  # we are iterating over the "websites" variable defined in group_vars/webservers
+  with_items: "{{ websites }}"
+
