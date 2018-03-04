@@ -1,0 +1,7 @@
+# hosts can not only contain hostnames but also hostgroups
+# executing "ansible-playbook 1-environments.yml" will do nothing
+# executing "ansible-playbook -i environments/local 1-environments.yml" will execute the playbook on localhost
+- hosts: my_host_group
+  roles:
+    # the role "my-role" is applied to each member of the hostgroup my_host_group
+    - my-role
