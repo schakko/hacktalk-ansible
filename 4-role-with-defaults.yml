@@ -1,0 +1,7 @@
+- hosts: localhost 
+  roles:
+    # when using "ap 4-role-with-defaults.yml" it will set the port to 80
+    - "role-with-defaults"
+    # this executes the the role again but overwriting the default port to 9090 
+    - { role: role-with-defaults, apache_http_port: 9090 }
+    # when using "ap -e apache_http_port=10100" this overwrites every other configuration

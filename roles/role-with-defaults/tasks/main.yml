@@ -1,0 +1,6 @@
+- name: Configuring Apache HTTP port
+  debug:
+    # if you are not setting this variable with command line parameter "-e apache_http_port=8080"
+    # it will use the setting from ../defaults/main.yml
+    msg: "Setting Apache HTTP port to {{ apache_http_port }}"
+    verbosity: 0
