@@ -1,0 +1,11 @@
+# "hosts" is a special attribute to define against which hosts this playbook has to be run
+- hosts: localhost
+
+  # "tasks" is the section with every task to execute against the previously selected hosts.
+  # most of the time you want to use roles and not inline tasks
+  tasks:
+  - name: Print "Hello World"
+    debug:
+      msg: "Hello World"
+      # verbosity = 0 means printing output without -v[vv] switch
+      verbosity: 0

@@ -1,0 +1,34 @@
+# "hosts" is a special attribute to define against which hosts this playbook has to be run
+- hosts: localhost
+
+  tasks:
+  # Variables can be boolean
+  - name: Set multiple variables
+    set_fact: 
+      execute_task_a: true
+      execute_task_b: false
+
+  - name: Task A is always executed
+    debug:
+      msg: "Task A - is printed"
+      verbosity: 0
+    # The attribute "when" evaluates the expression and does only execute the task if the expresion is true
+    when: execute_task_a == true
+
+  - name: Task B is never executed
+    debug:
+      msg: "Task B - is not printed"
+      verbosity: 0
+    when: execute_task_b == true
+
+  - name: Use logic inside strings with ternary filter
+    debug:
+      msg: "Task A: {{ execute_task_a | ternary('is true', 'is false') }} - Task B: {{ execute_task_b | ternary('is true', 'is false') }}"
+      verbosity: 0
+
+  # Jinja2 is the library Ansible uses for templating
+  - name: Use logic with Jinja if clauses
+    debug:
+      msg: "{% if execute_task_a %}Task A is executed{% endif %} - {% if execute_task_b %}Task B is executed{% else %}Task B is *NOT* executed{% endif %}"
+      verbosity: 0
+

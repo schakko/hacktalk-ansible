@@ -1,0 +1,17 @@
+# "hosts" is a special attribute to define against which hosts this playbook has to be run
+- hosts: localhost
+
+  tasks:
+  # Variables can be lists or dicts
+  - name: Set the array's content 
+    set_fact: 
+      my_array:
+        - a
+        - b
+        - c
+
+  - name: Print every element of array "my_array"
+    debug:
+      msg: "Element {{ item }}"
+      verbosity: 0
+    with_items: "{{ my_array }}"
